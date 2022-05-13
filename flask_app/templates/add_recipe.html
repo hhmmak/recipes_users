@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+</head>
+<body>
+    <div class="container">
+        <!-- .. page header and nav -->
+        <div class="my-5 d-flex justify-content-between align-items-end">
+            <h1 class="h1">Add New Recipe</h1>
+            <ul class="nav">
+                <li class="nav-item"><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+        
+        <!-- .. form to add new recipe -->
+        <div class="my-3">
+            <form action="/recipes/new" method="post">
+                <div class="row mb-3">
+                    <label for="name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="description" class="col-sm-2 col-form-label">Description</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="description" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="instructions" class="col-sm-2 col-form-label">Instructions</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="instructions" rows="3"></textarea>
+                    </div>
+                </div>
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-3 pt-0">Under 30 Minutes?</legend>
+                    <div class="col-sm-7">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="under_thirty_mins" value="1" id="radio-yes">
+                            <label class="form-check-label" for="radio-yes">Yes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="under_thirty_mins" value="0" id="radio-no" checked>
+                            <label class="form-check-label" for="radio-no">No</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="row mb-3">
+                    <label for="date_made" class="col-sm-2 col-form-label">Date Made On</label>
+                    <div class="col-sm-6">
+                        <input type="date" class="form-control" name="date_made" value="{{today}}">
+                    </div>
+                </div>
+                <div class="d-grid d-lg-block">
+                    <input type="submit" value="Create" class="btn btn-primary col-lg-5">
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>
